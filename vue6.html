@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <button v-bind:disabled="isButtonDisabled">Button</button>
+        <script>
+            var vm = new Vue ({
+                el: 'button',
+                data: {
+                    isButtonDisabled: false
+                }
+            })
+        </script>
+    </body>
+</html>
