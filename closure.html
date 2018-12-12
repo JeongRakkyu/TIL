@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            var scope = "global";
+
+            function scope1() {
+                console.log(scope); // 결과값 :
+                var scope = "local";
+                console.log(scope); // 결과값 :
+            }
+
+            function scope2() {
+                console.log(scope); // 결과값 :
+                scope = "local";
+                console.log(scope); // 결과값 :
+            }
+
+            scope1();
+
+            scope2();
+
+            console.log(scope); // 결과값 :
+        </script>
+    </body>
+</html>
