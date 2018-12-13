@@ -17,11 +17,13 @@
                 m = m < 10 ? "0" + m : m;
                 s = s < 10 ? "0" + s : s;
 
-                return h + " : " + m + " : " + s;
+                var time = h + " : " + m + " : " + s;
+                document.getElementById("demo").innerText = time;
+
+                setTimeout(clock, 1000);
+
+                return date;
             }
-            
-            document.getElementById("demo").innerHTML = clock()
-            setInterval(function() {document.getElementById("demo").innerHTML = clock()}, 1000);
         </script>
     </body>
 </html>
