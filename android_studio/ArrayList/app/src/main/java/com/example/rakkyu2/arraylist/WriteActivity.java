@@ -4,13 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.RequiresPermission;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class WriteActivity extends MainActivity {
-
-    private MyAdapter adapter2 = super.myAdapter;
+public class WriteActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,11 +23,12 @@ public class WriteActivity extends MainActivity {
         button.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(WriteActivity.this, MainActivity.class);
+                Intent intent = new Intent(WriteActivity.this, MainActivity.class);
 
-                adapter2.addItem(editText1.getText().toString() == "html" ? ContextCompat.getDrawable(getApplicationContext(), R.drawable.html) : ContextCompat.getDrawable(getApplicationContext(), R.drawable.javascript),
-                        editText1.getText().toString(), editText2.getText().toString());
-                startActivity(intent2);
+                intent.putExtra("subject", editText1.getText().toString());
+                intent.putExtra("contents", editText2.getText().toString());
+
+                startActivity(intent);
             }
         });
     }

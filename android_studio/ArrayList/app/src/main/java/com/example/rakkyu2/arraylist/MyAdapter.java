@@ -9,10 +9,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class MyAdapter extends BaseAdapter {
+public class MyAdapter extends BaseAdapter implements Serializable {
     private ArrayList<Item> items = new ArrayList<>();
+    private Item item = new Item();
 
     @Override
     public int getCount() {
@@ -40,7 +42,7 @@ public class MyAdapter extends BaseAdapter {
 
         ImageView img = (ImageView) convertView.findViewById(R.id.icon);
         TextView subject = (TextView) convertView.findViewById(R.id.subject);
-        TextView contents = (TextView) convertView.findViewById(R.id.subject);
+        TextView contents = (TextView) convertView.findViewById(R.id.contents);
 
         Item item = getItem(position);
 
@@ -52,7 +54,6 @@ public class MyAdapter extends BaseAdapter {
     }
 
     public void addItem(Drawable img, String subject, String contents) {
-        Item item = new Item();
 
         item.setIcon(img);
         item.setSubject(subject);
