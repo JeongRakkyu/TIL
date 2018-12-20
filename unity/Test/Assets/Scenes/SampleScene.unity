@@ -254,6 +254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NormalBall: {fileID: 6413658259972288554, guid: f51987e60cfedc8448ce83a6d9dcdb6c,
     type: 3}
+  EmptyNormalBall: {fileID: 5041117855050591803, guid: 7693031ff5571c64ca25efa8de2e917e,
+    type: 3}
 --- !u!1 &1342549201
 GameObject:
   m_ObjectHideFlags: 0

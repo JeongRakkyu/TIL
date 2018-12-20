@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlockInfo : MonoBehaviour {
-    int healthPoint;
+    public int healthPoint;
     float xHalfSize;
     float yHalfSize;
     Vector3 thisBlockPos;
@@ -46,6 +46,15 @@ public class BlockInfo : MonoBehaviour {
         }
     }
 
+    void GetDamage(int dam) {
+        healthPoint -= dam;
+
+        if (healthPoint < 1) {
+            healthPoint = 0;
+            gameObject.SetActive(false);
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Ball")) {
             Debug.Log("충돌");
@@ -63,8 +72,14 @@ public class BlockInfo : MonoBehaviour {
                 }
 
                 tempMoveBall.frameCollisionCheck = true;
-                gameObject.SetActive(false);
+                tempMoveBall = null;
+
+                //gameObject.SetActive(false);
+                GetDamage(col.gameObject.GetComponent<BallInfo>().damage);
+            } else {
+                tempMoveBall = null;
             }
+
             shortestSide = 0;
         }
     }
