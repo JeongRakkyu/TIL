@@ -1,0 +1,64 @@
+!SESSION 2018-12-20 16:10:55.779 -----------------------------------------------
+eclipse.buildId=4.9.0.I20180906-0745
+java.version=1.8.0_181-1-redhat
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-12-20 16:11:33.576
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.arduino.core.descriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-12-20 16:11:33.587
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-12-20 16:11:33.594
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-12-20 16:11:33.598
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-12-20 16:11:33.600
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-12-20 16:11:33.602
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-12-20 16:11:34.092
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\RAKKYU'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-12-20 16:11:35.220
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Proxy Error. ; version: 2.0.7.v20180504-0806
+!STACK 0
+org.apache.http.client.HttpResponseException: Proxy Error
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseHandler.handleResponse(HttpResponses.java:66)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:1)
+	at org.apache.http.client.fluent.Response.handleResponse(Response.java:90)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses.getContentWithProgress(HttpResponses.java:51)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:65)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.equinox.p2.engine 4 4 2018-12-20 16:33:43.506
+!MESSAGE An error occurred while committing the engine session for profile: C__Users_RAKKYU_eclipse_eclipse.
+!SUBENTRY 1 org.eclipse.equinox.p2.engine 4 0 2018-12-20 16:33:43.506
+!MESSAGE An error occurred while undoing the org.eclipse.equinox.internal.p2.engine.phases.Collect phase.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.getProfileDataDirectory(EngineSession.java:81)
+	at org.eclipse.equinox.internal.p2.engine.Phase.prePerform(Phase.java:117)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollBackPhase(EngineSession.java:233)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollback(EngineSession.java:182)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:89)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:48)
+	at org.eclipse.equinox.p2.operations.ProvisioningSession.performProvisioningPlan(ProvisioningSession.java:178)
+	at org.eclipse.equinox.p2.operations.ProfileModificationJob.runModal(ProfileModificationJob.java:76)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:190)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
