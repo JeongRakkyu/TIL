@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Electron App</title>
+        <script src="renderer.js"></script>
+    </head>
+    <body>
+        <form id="form">
+            <select id="cat1" onchange="select1(this)">
+                <option selected disabled>1차 분류</option>
+                <option value="50000000">패션의류</option>
+                <option value="50000001">패션잡화</option>
+                <option value="50000002">화장품/미용</option>
+                <option value="50000003">디지털/가전</option>
+                <option value="50000004">가구/인테리어</option>
+                <option value="50000005">출산/육아</option>
+                <option value="50000006">식품</option>
+                <option value="50000007">스포츠/레저</option>
+                <option value="50000008">생활/건강</option>
+                <option value="50000009">여행/문화</option>
+                <option value="50000010">면세점</option>
+            </select>
+            <select id="cat2">
+                <option selected disabled>2차 분류</option>
+            </select>
+            <select id="cat3">
+                <option selected disabled>3차 분류</option>
+            </select>
+        </form>
+        <p id="demo"></p>
+        <button id="test" onclick="loadDoc()">ddd</button>
+        <script>
+            var test1234;
+
+            function select1(opt) {
+                let option = opt[opt.selectedIndex].value;
+                document.getElementById("demo").innerHTML = option;
+
+                let cat2 = document.getElementById("cat2");
+                cat2.innerHTML = "                <option selected disabled>2차 분류</option>";
+
+                let cat2Text0 = ["여성의류", "여성언더웨어/잠옷", "남성의류", "남성언더웨어/잠옷", "아동의류", "아동언더웨어/잠옷"];
+                let cat2Value0 = ["50000167", "50000168", "50000169", "50000170", "50000171", "50000172"];
+
+                let cat2Text1 = ["여성신발", "남성신발", "신발용품", "양말", "여성가방", "남성가방", "여행용가방/소품", "지갑", "벨트", "모자", "장갑", "선글라스/안경테", "헤어악세서리", "패션소품", "시계", "베이비주얼리", "순금", "주얼리"];
+                let cat2Value1 = ["50000173", "50000174", "50000175", "50000166", "50000176", "50000177", "50000178", "50000179", "50000180", "50000181", "50000182", "50000183", "50000184", "50000185", "50000186", "50000187", "50000188", "50000189"];
+
+                if (option == "50000000") {
+                    let cat2Option;
+                    for (let i = 0; i < cat2Text0.length; i++) {
+                        cat2Option = document.createElement("option");
+                        cat2Option.value = cat2Value0[i];
+                        cat2Option.innerText = cat2Text0[i];
+                        cat2.append(cat2Option);
+                    }
+                }
+
+                if (option == "50000001") {
+                    let cat2Option;
+                    for (let i = 0; i < cat2Text1.length; i++) {
+                        cat2Option = document.createElement("option");
+                        cat2Option.value = cat2Value1[i];
+                        cat2Option.innerText = cat2Text1[i];
+                        cat2.append(cat2Option);
+                    }
+                }
+            }
+/*            
+            function loadDoc() {
+                const crypto = require('crypto')
+
+var timestamp = new Date().getTime();
+var hmac = crypto.createHmac('sha256', "AQAAAAAD8yn64c5rZb9P6fo105XIJ81faSqrc/+GbNx2FRCbQw==")
+var pass = hmac.update(timestamp + "." + "GET" + "." + "/keywordstool").digest('base64')
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.response;
+    }
+  };
+
+
+  xhttp.open("GET", "https://api.naver.com/keywordstool?hintKeywords=패션의류&showDetail=1", true);
+  xhttp.setRequestHeader("Content-Type", "application/json");
+  xhttp.setRequestHeader("X-Timestamp", timestamp);
+  xhttp.setRequestHeader("X-API-KEY", "010000000003f329fae1ce6b65bf4fe9fa35d395c836ac733757a789a87e9d002b96a7d669");
+  xhttp.setRequestHeader("X-Customer", 1562246);
+  xhttp.setRequestHeader("X-Signature", pass);
+  xhttp.send(); 
+}
+*/
+        </script>
+    </body>
+</html>
